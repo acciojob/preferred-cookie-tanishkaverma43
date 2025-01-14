@@ -8,8 +8,8 @@ function applyPreferences() {
         savedFontSize = savedFontSize.split('=')[1];
         savedFontColor = savedFontColor.split('=')[1];
 
-        document.documentElement.style.setProperty('--fontsize', savedFontSize + 'px');
-        document.documentElement.style.setProperty('--fontcolor', savedFontColor);
+        document.body.style.fontSize = savedFontSize + 'px';
+        document.body.style.color = savedFontColor;
     }
 }
 
@@ -27,7 +27,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
     document.cookie = "fontSize=" + fontSize;
     document.cookie = "fontColor=" + fontColor;
 
-    // Update the CSS variables
-    document.documentElement.style.setProperty('--fontsize', fontSize + 'px');
-    document.documentElement.style.setProperty('--fontcolor', fontColor);
+    // Update the body style
+    document.body.style.fontSize = fontSize + 'px';
+    document.body.style.color = fontColor;
 });
