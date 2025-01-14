@@ -4,6 +4,9 @@ function applyPreferences() {
     let savedFontSize = cookies.find(row => row.startsWith('fontSize'));
     let savedFontColor = cookies.find(row => row.startsWith('fontColor'));
 
+	// Inside your applyPreferences function
+console.log('Applying preferences: ', savedFontSize, savedFontColor);
+
     if (savedFontSize && savedFontColor) {
         savedFontSize = savedFontSize.split('=')[1];
         savedFontColor = savedFontColor.split('=')[1];
@@ -30,4 +33,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
     // Update the body style
     document.body.style.fontSize = fontSize + 'px';
     document.body.style.color = fontColor;
+
+	// Inside your form submit event listener
+console.log('Updating font size and color: ', fontSize, fontColor);
 });
